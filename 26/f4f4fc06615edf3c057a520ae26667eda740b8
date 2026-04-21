@@ -1,0 +1,37 @@
+src/factories/createLightship.ts
+  8300ad067fbaf15c 19
+.github/workflows/feature.yaml
+  8300ad067fbaf15c 1-10,23,28-31
+.github/workflows/main.yaml
+  8300ad067fbaf15c 1-5,7,9,23,28-33,36-37
+src/utilities/delay.ts
+  8300ad067fbaf15c 1-6
+package.json
+  8300ad067fbaf15c 10,12,29,34,42-45,49-52,55,58,64-65
+.gitignore
+  8300ad067fbaf15c 15-16
+README.md
+  8300ad067fbaf15c 1,3,7-39
+test/lightship/factories/createLightship.ts
+  8300ad067fbaf15c 9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "26f4f4fc06615edf3c057a520ae26667eda740b8",
+  "prompts": {
+    "8300ad067fbaf15c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e0620928-c686-4aca-bd3b-9ef466e5162f",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Rafael Pérez",
+      "messages": [],
+      "total_additions": 93,
+      "total_deletions": 43,
+      "accepted_lines": 93,
+      "overriden_lines": 0
+    }
+  }
+}
