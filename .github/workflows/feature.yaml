@@ -29,4 +29,12 @@ jobs:
         run: node -e "const { createLightship } = require('./dist/cjs'); console.log('CJS require works:', typeof createLightship)"
       - name: audit production deps
         run: npm audit --omit=dev
+      - name: trivy vulnerability scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scan-ref: .
+          severity: HIGH,CRITICAL
+          scanners: vuln
+          exit-code: 1
     timeout-minutes: 10
