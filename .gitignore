@@ -13,3 +13,4 @@ node_modules
 !.nycrc
 !.README
 !.releaserc
+!.github

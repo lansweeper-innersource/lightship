@@ -16,8 +16,8 @@ import {
   type Lightship,
   type ShutdownHandler,
 } from '../types.js';
+import delay from '../utilities/delay.js';
 import { isKubernetes } from '../utilities/isKubernetes.js';
-import delay from 'delay';
 import createFastify from 'fastify';
 import { EventEmitter } from 'node:events';
 import { serializeError } from 'serialize-error';
