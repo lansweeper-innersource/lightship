@@ -1,10 +1,42 @@
-# Lightship 🚢
+# lightship-cjs
 
-[![NPM version](http://img.shields.io/npm/v/lightship.svg?style=flat-square)](https://www.npmjs.org/package/lightship)
-[![Canonical Code Style](https://img.shields.io/badge/code%20style-canonical-blue.svg?style=flat-square)](https://github.com/gajus/canonical)
-[![Twitter Follow](https://img.shields.io/twitter/follow/kuizinas.svg?style=social&label=Follow)](https://twitter.com/kuizinas)
+> **CJS-compatible fork** of [gajus/lightship](https://github.com/gajus/lightship) by [Gajus Kuizinas](https://github.com/gajus).
 
 Abstracts readiness, liveness and startup checks and graceful shutdown of Node.js services running in Kubernetes.
+
+## Why This Fork
+
+The upstream [lightship](https://www.npmjs.com/package/lightship) v9.x ships a dual ESM/CJS build, but its CJS output internally `require()`s ESM-only dependencies (`delay`, `serialize-error`). This breaks Jest in CommonJS projects because Jest's module system cannot resolve ESM `import`/`export` syntax from `require()` calls.
+
+**`lightship-cjs`** solves this by:
+
+- Replacing `delay` with a built-in `setTimeout` wrapper (zero dependencies)
+- Pinning `serialize-error` to v8 (the last CommonJS-compatible version, same API for error serialization)
+- Building CJS-only output (no `"type": "module"`)
+
+The API is identical to upstream lightship. For full documentation, see the [original README](https://github.com/gajus/lightship#readme).
+
+## Install
+
+```bash
+npm install lightship-cjs
+```
+
+## Usage
+
+```js
+const { createLightship } = require('lightship-cjs');
+// or
+import { createLightship } from 'lightship-cjs';
+
+const lightship = await createLightship();
+
+lightship.signalReady();
+```
+
+## License
+
+BSD-3-Clause (same as upstream). Original work by [Gajus Kuizinas](https://github.com/gajus).
 
 ## Behaviour
 

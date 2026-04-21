@@ -6,7 +6,7 @@ import {
   SERVER_IS_SHUTTING_DOWN,
 } from '../../../src/states.js';
 import { type Lightship } from '../../../src/types.js';
-import delay from 'delay';
+import delay from '../../../src/utilities/delay.js';
 import { type AddressInfo } from 'node:net';
 import { expect, test, vi } from 'vitest';
 
